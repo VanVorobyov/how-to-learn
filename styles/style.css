@@ -1,31 +1,452 @@
 .page {
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
-  /* выше для экранов больше 1600px отцентрировали весь контент */
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* МИКСЫ и Вспомогательные классы */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.centered-blok {
+  justify-content: center;
+  align-items: center;
+}
+
+/* -----Блок HEADER----- */
+
 .header {
+  position: relative;
+  display: flex;
   height: 100vh;
   min-height: 600px;
   max-height: 756px;
-  /* выше установили ограничения для секции */
+  background-color: #f2f2f2;
+  z-index: -1;
 }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
+/* Логотип Яндекс Практикума */
+
+.logo {
+  width: 228px;
+  height: 32px;
+}
+
+.logo_place_header {
+  background-image: url(../images/logo_place_header.svg);
+}
+
+.logo_place_header_position {
+  position: absolute;
+  top: 30px;
+  left: 64px;
+  z-index: 1;
+}
+
+/* ---Заголовок "Научиться учиться"--- */
+
+.header__title {
+  width: 730px;
+  margin-left: 64px;
+  align-items: center;
+}
+
+.header__title_text {
+  font-style: normal;
+  font-size: 102px;
+  line-height: 96px;
+  font-weight: 500;
+}
+
+/* ---Подзаголовок--- */
+
+.header__subtitle {
+  width: 388px;
+  margin-left: 64px;
+}
+
+.header__subtitle_position {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 30px;
+}
+
+.header__subtitle_text {
+  margin: 0;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: normal;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #2f80ed;
+}
+
+/* ---Главное изображение Header'а--- */
+
+.header__main-illustration {
+  width: 765px;
+  height: 608px;
+  background-image: url(../images/header-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__main-illustration_size {
+  width: 765px;
+  height: 608px;
+}
+
+.header__main-illustration_position {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* ---Изображение синего квардрата--- */
+
 .header__square-pic {
   height: 568px;
   width: 568px;
 }
 
-/* и элемента с модификатором вида ключ-значение */
+.header__square-pic_color {
+  background-color: #2f80ed;
+}
+
+.header__square-pic_position {
+  position: absolute;
+  right: 0;
+  top: 64px;
+  z-index: -2;
+}
+
+/* -----Блок MAIN/CONTENT----- */
+
+/* --- 1 секция "Описание"--- */
+
+.description {
+  margin: 100px auto 100px;
+  display: flex;
+}
+
+/* Таблица */
+
+.two-columns {
+  justify-content: space-between;
+  width: 80%;
+}
+
+/* 1 столбик таблицы */
+
+.two-columns_brief {
+  justify-content: flex-start;
+  margin: 0;
+  width: 175px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+  color: #2f80ed;
+}
+
+/* 2 столбик таблицы */
+
+.two-columns_main {
+  justify-content: space-between;
+  min-width: 784px;
+  width: 80%;
+}
+
+.two-columns_paragragh {
+  align-items: flex-start;
+  margin: 0 auto 30px;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.two-columns_span-accent {
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.two-columns_paragragh:last-of-type {
+  margin: 0 auto 0;
+}
+
+/* --- 2 секция "Цифры и факты"--- */
+
+.digits {
+  margin: 100px auto 100px;
+}
+
+/* Заголовок */
+
+.section-title {
+  margin: 0 auto;
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+/* Подзаголовок */
+
+.section-subtitle {
+  margin: 20px auto 0;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+/* Общий класс для выравнивания заголовков 2 и 4 секции по центру */
+
+.section-title_width_60 {
+  width: 60%;
+  text-align: center;
+}
+
+/* Таблица с карточками */
+.table {
+  vertical-align: middle;
+  list-style: none;
+  margin: 60px auto 0;
+  padding: 0;
+  width: 1100px;
+  justify-content: space-between;
+}
+
+.table__cell {
+  width: 250px;
+}
+
+.table__heading {
+  margin: 0 0 20px;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.table__text {
+  margin: 0 0 20px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* ---3 секция "Метод Фейнмана"--- */
+
+.feynman {
+  position: relative;
+  height: 890px;
+  background-color: #f2f2f2;
+}
+
+/* Изображение Фейнмана */
+
+.feyman_main-image {
+  background-position: left bottom;
+  background-image: url(../images/feynman.png);
+  background-repeat: no-repeat;
+  background-size: 867px 637px;
+}
+
+/* Заголовок №3 */
+
+.feynman_margin-top {
+  display: inline-block;
+  margin-top: 90px;
+}
+
+.feynman__title {
+  width: 648px;
+  text-align: center;
+  margin: 0 auto;
+  vertical-align: 100px;
+  line-height: 1.15;
+  font-size: 120px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Подзаголвок блока №3 */
+
+.feynman__subtitle {
+  margin: 70px auto 0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Ссылка "Подробнее" */
+.feynman__link_position {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+}
+
+.feynman__link {
+  color: #2f80ed;
+  text-decoration: none;
+  z-index: 2;
+}
+
+/* Общие настройки текста блока */
+
+.feynman_text {
+  line-height: 51px;
+  font-size: 36px;
+  font-weight: normal;
+}
+
+/* ---4 секция "Принципы обучения" */
+
+.kaufman {
+  position: relative;
+  background-color: #1f1f1f;
+  overflow: hidden;
+  z-index: -2;
+  padding: 90px 0 90px;
+}
+
+/* Изображение синего треуголника */
+
+.kaufman__triangle {
+  background-image: url(../images/kaufman-triangle.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -210px;
+  top: 0;
+  z-index: -1;
+  width: 877px;
+  height: 877px;
+}
+
+/* Заголовок №4 */
+
+.section-title_theme_dark {
+  color: white;
+  margin: 0px auto 0;
+}
+
+/* Подзаголовок №4 */
+
+.section-subtitle_theme_dark {
+  color: white;
+  margin: 20px auto 0;
+}
+
+/* Таблица с карточками */
+
+.table_theme_dark {
+  margin: 80px auto 0;
+}
+
 .table__cell_theme_dark {
   width: 200px;
   color: white;
-  margin-right: 0;
-  margin-top: 80px;
+}
+
+.table__heading_theme_dark {
+  margin: 0 0 20px;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.table__text_theme_dark {
+  margin: 0 0 20px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* -----Блок FOOTER----- */
+
+.footer {
+  display: flex;
+  min-height: 350px;
+}
+
+.footer__theme_dark {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/*  Общий блок для контента футера + параметры размеров и отступов*/
+
+.footer__columns {
+  margin: 60px auto 40px;
+  width: 90%;
+  justify-content: space-between;
+}
+
+/*  Первый блок контента (копирайт) */
+
+.footer__columns_content_copyright {
+  justify-content: space-between;
+  flex-basis: 711px;
+}
+
+.logo_place_footer {
+  background-image: url(../images/logo_place_footer.svg);
+}
+
+.footer__author {
+  margin: 18px 0;
+}
+
+.footer__author_text {
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/* Второй и третий блоки контента (+ внешние ссылки 3 блока)  */
+
+.footer__columns_content_info {
+}
+
+.footer__column-heading {
+  margin: 0 0 20px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer__column_links {
+  vertical-align: middle;
+  list-style: none;
+  padding: 0;
+}
+
+.footer__column-link {
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: normal;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.footer__social_icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
 }
