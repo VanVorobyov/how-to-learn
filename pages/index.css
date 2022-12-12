@@ -1,4 +1,4 @@
-@import url(../normalize.css);
+@import url(../vendor/normalize.css);
 @import url(../blocks/page/page.css);
 /* Header */
 @import url(../blocks/header/header.css);
@@ -17,7 +17,7 @@
 @import url(../blocks/two-columns/two-columns.css);
 @import url(../blocks/two-columns/__brief/two-columns__brief.css);
 @import url(../blocks/two-columns/__main-text/two-columns__main-text.css);
-@import url(../blocks/two-columns/__paragragh/two-columns__paragragh.css);
+@import url(../blocks/two-columns/__paragraph/two-columns__paragraph.css);
 @import url(../blocks/two-columns/__span-accent/two-columns__span-accent.css);
 /* 2 section Techniques */
 @import url(../blocks/techniques/techniques.css);
